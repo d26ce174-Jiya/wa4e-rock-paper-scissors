@@ -1,7 +1,6 @@
 <?php
 $salt = 'XyZzy12*_';
-$stored_hash = md5($salt . 'meow123');
-
+$stored_hash = md5($salt . 'php123');
 if (isset($_POST['cancel'])) {
     header("Location: index1.php");
     exit();
