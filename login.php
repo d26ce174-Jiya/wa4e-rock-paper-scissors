@@ -31,6 +31,6 @@ if (isset($_POST['who']) && isset($_POST['pass'])) {
 <input type="submit" value="Log In">
 <input type="submit" name="cancel" value="Cancel">
 </form>
-<p>Password hint: Four-character sound a cat makes followed by 123.</p>
+<!-- <p>Password hint: Four-character sound a cat makes followed by 123.</p> -->
 </body>
 </html>
