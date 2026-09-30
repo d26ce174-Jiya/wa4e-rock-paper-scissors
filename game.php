@@ -1,4 +1,3 @@
-```php
 <?php
 if (!isset($_GET['name']) || trim($_GET['name']) === '') {
     die("Name parameter missing");
@@ -29,33 +28,26 @@ function check($c, $h) {
 </head>
 <body>
 
-<h1>Welcome, <?php echo $name; ?>!</h1>
-
-<h2>Rock Paper Scissors Game</h2>
+<h1>Welcome, <?php echo $name; ?></h1>
 
 <form method="POST">
-    <select name="human">
-        <option value="0">Rock</option>
-        <option value="1">Paper</option>
-        <option value="2">Scissors</option>
-    </select>
+<select name="human">
+<option value="0">Rock</option>
+<option value="1">Paper</option>
+<option value="2">Scissors</option>
+</select>
 
-    <input type="submit" value="Play">
-    <input type="submit" name="logout" value="Logout">
+<input type="submit" value="Play">
+<input type="submit" name="logout" value="Logout">
 </form>
 
 <?php
 if ($human >= 0 && $human <= 2 && !isset($_POST['logout'])) {
-<?php
-if ($human >= 0 && $human <= 2 && !isset($_POST['logout'])) {
-    echo "Your Play=" . $names[$human] . "\n";
-    echo "Computer Play=" . $names[$computer] . "\n";
-    echo "Result=" . check($computer, $human) . "\n";
-}
-?>
+    echo "<p>Your Play=" . $names[$human] . "</p>\n";
+    echo "<p>Computer Play=" . $names[$computer] . "</p>\n";
+    echo "<p>Result=" . check($computer, $human) . "</p>\n";
 }
 ?>
 
 </body>
 </html>
-```
