@@ -1,15 +1,21 @@
+```php
 <?php
 if (!isset($_GET['name']) || trim($_GET['name']) === '') {
     die("Name parameter missing");
 }
+
 $name = htmlspecialchars($_GET['name'], ENT_QUOTES, 'UTF-8');
+
 if (isset($_POST['logout'])) {
     header('Location: index1.php');
     exit();
 }
+
 $names = array('Rock', 'Paper', 'Scissors');
+
 $human = isset($_POST['human']) ? (int)$_POST['human'] : -1;
 $computer = rand(0, 2);
+
 function check($c, $h) {
     if ($h == $c) return "Tie";
     if (($h + 1) % 3 == $c) return "You Lose";
@@ -18,26 +24,34 @@ function check($c, $h) {
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>e87f7ce8 - Rock Paper Scissors</title></head>
+<head>
+<title>e87f7ce8 - Rock Paper Scissors</title>
+</head>
 <body>
+
 <h1>Welcome, <?php echo $name; ?>!</h1>
+
 <h2>Rock Paper Scissors Game</h2>
+
 <form method="POST">
-<label>Select your choice:</label>
-<select name="human">
-<option value="0">Rock</option>
-<option value="1">Paper</option>
-<option value="2">Scissors</option>
-</select><br><br>
-<input type="submit" value="Play">
-<input type="submit" name="logout" value="Logout">
+    <select name="human">
+        <option value="0">Rock</option>
+        <option value="1">Paper</option>
+        <option value="2">Scissors</option>
+    </select>
+
+    <input type="submit" value="Play">
+    <input type="submit" name="logout" value="Logout">
 </form>
+
 <?php
 if ($human >= 0 && $human <= 2 && !isset($_POST['logout'])) {
-    echo "<h3>Your Choice: " . $names[$human] . "</h3>";
-    echo "<h3>Computer Choice: " . $names[$computer] . "</h3>";
-    echo "<h2>Result: " . check($computer, $human) . "</h2>";
+    echo "<p>Your Play: " . $names[$human] . "</p>";
+    echo "<p>Computer Play: " . $names[$computer] . "</p>";
+    echo "<p>Result: " . check($computer, $human) . "</p>";
 }
 ?>
+
 </body>
 </html>
+```
