@@ -24,7 +24,7 @@ function check($c, $h) {
 <!DOCTYPE html>
 <html>
 <head>
-<title>e87f7ce8 - Rock Paper Scissors</title>
+<title>e87f7ce8 - <?php echo $name; ?></title>
 </head>
 <body>
 
