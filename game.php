@@ -46,9 +46,13 @@ function check($c, $h) {
 
 <?php
 if ($human >= 0 && $human <= 2 && !isset($_POST['logout'])) {
-    echo "Your Play=" . $names[$human] . "<br>\n";
-    echo "Computer Play=" . $names[$computer] . "<br>\n";
-    echo "Result=" . check($computer, $human) . "<br>\n";
+<?php
+if ($human >= 0 && $human <= 2 && !isset($_POST['logout'])) {
+    echo "Your Play=" . $names[$human] . "\n";
+    echo "Computer Play=" . $names[$computer] . "\n";
+    echo "Result=" . check($computer, $human) . "\n";
+}
+?>
 }
 ?>
 
