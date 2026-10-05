@@ -1,21 +1,45 @@
 <?php
 session_start();
 
-if (isset($_SESSION['name'])) {
-    header("Location: game.php");
-    exit();
+if (isset($_POST['who']) && isset($_POST['pass'])) {
+    $who = trim($_POST['who']);
+    $pass = $_POST['pass'];
+
+    if ($who !== '' && $pass !== '') {
+        $_SESSION['name'] = $who;
+        header("Location: game.php");
+        exit();
+    } else {
+        $error = "Both fields are required";
+    }
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Rock Paper Scissors</title>
+    <title>Aadrittshaya f29de078</title>
 </head>
 <body>
 
-<h1>Welcome to Rock Paper Scissors</h1>
+<h1>Please Log In</h1>
 
-<a href="login.php">Please Log In</a>
+<?php
+if (isset($error)) {
+    echo "<p>" . htmlspecialchars($error) . "</p>";
+}
+?>
+
+<form method="post">
+    <label>Username:</label>
+    <input type="text" name="who">
+    <br><br>
+
+    <label>Password:</label>
+    <input type="password" name="pass">
+    <br><br>
+
+    <input type="submit" value="Log In">
+</form>
 
 </body>
 </html>
