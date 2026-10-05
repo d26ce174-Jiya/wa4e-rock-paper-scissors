@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -39,7 +38,7 @@ if (isset($_POST['who']) && isset($_POST['pass'])) {
         <br><br>
 
         <input type="submit" value="Log In">
-        <a href="index.php">Cancel</a>
+        <a href="index1.php">Cancel</a>
     </form>
 </body>
 </html>
